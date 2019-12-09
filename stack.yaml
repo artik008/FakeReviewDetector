@@ -1,0 +1,8 @@
+resolver: lts-13.24
+
+packages:
+- .
+
+ghc-options:
+  '$locals': -Wall -fno-warn-orphans -fno-warn-warnings-deprecations -fno-warn-unticked-promoted-constructors -fno-warn-type-defaults
+  'FakeReviewDetector': -Werror

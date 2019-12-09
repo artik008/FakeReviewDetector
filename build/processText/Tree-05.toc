@@ -1,0 +1,5 @@
+('/Users/artem/git/FakeReviewDetector/build/processText/idna-2.6-py3.6.egg',
+ None,
+ {'*.abi3.so', '*.so', 'EGG-INFO', '*.pyc', '*.py', '*.cpython-36m-darwin.so'},
+ 'DATA',
+ [])
