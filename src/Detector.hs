@@ -20,7 +20,7 @@ import           TextModel
 countWithTeacher :: FilePath -> FilePath  -> IO ()
 countWithTeacher teacher tester = do
   res <- teach teacher
-  putStrLn $ show res
+  -- putStrLn $ show res
   countNew tester res
 
 
@@ -48,10 +48,10 @@ countOneNew url (borderBad, borderGood) = do
 
 teach :: FilePath -> IO ([Float], [Float])
 teach fpath = do
-  putStrLn "Train:"
+  putStrLn "Train..."
   teachers <- map words <$> lines <$> readFile fpath
   res <- sequence $ map countAuthorKarma (map head teachers)
-  putStrLn $ ppShow res
+  -- putStrLn $ ppShow res
   return $ p (\t -> countCenter t teachers res) "0" "1"
   where
     p f x y = (f x, f y) 
@@ -112,7 +112,7 @@ countAuthorKarma url = do
   writeFile
     ("full_reviews/" <> urlToName url) $
     show $ r{reviewAuthor = Just $ rA{authorKarma = snd result}}
-  putStrLn $ show (url, snd result, valList)
+  -- putStrLn $ show (url, snd result, valList)
   addToAuthorsList result
   return (url, snd result, valList)
 
